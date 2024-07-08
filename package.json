@@ -1,0 +1,51 @@
+{
+    "name": "git-release-version",
+    "version": "1.0.0",
+    "description": "generate public release version from git info. designed in accordance with semantic versioning",
+    "keywords": [
+        "pwa install"
+    ],
+    "license": "MIT",
+    "author": {
+        "name": "halo951",
+        "url": "https://github.com/halo951"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/halo951/git-release-version.git"
+    },
+    "bugs": {
+        "url": "https://github.com/halo951/git-release-version/issues"
+    },
+    "sideEffects": false,
+    "files": [
+        "src",
+        "dist"
+    ],
+    "main": "dist/index.cjs",
+    "module": "dist/index.mjs",
+    "typings": "dist/index.d.ts",
+    "exports": {
+        ".": {
+            "types": "./dist/index.d.ts",
+            "require": "./dist/index.cjs",
+            "import": "./dist/index.mjs"
+        }
+    },
+    "scripts": {
+        "type-check": "vue-tsc --noEmit -p tsconfig.json --composite false",
+        "build": "unbuild"
+    },
+    "devDependencies": {
+        "@types/semver": "^7.5.8",
+        "typescript": "^5.4.5",
+        "unbuild": "^2.0.0"
+    },
+    "dependencies": {
+        "@types/assert": "^1.5.10",
+        "@types/node": "^20.14.10",
+        "assert": "^2.1.0",
+        "semver": "^7.6.2",
+        "simple-git": "^3.25.0"
+    }
+}
