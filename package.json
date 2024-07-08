@@ -1,6 +1,6 @@
 {
     "name": "release-version-by-git",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "generate public release version from git info. designed in accordance with semantic versioning",
     "keywords": [
         "pwa install"
