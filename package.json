@@ -1,5 +1,5 @@
 {
-    "name": "git-release-version",
+    "name": "release-version-by-git",
     "version": "1.0.0",
     "description": "generate public release version from git info. designed in accordance with semantic versioning",
     "keywords": [
@@ -12,10 +12,10 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/halo951/git-release-version.git"
+        "url": "https://github.com/halo951/release-version-by-git.git"
     },
     "bugs": {
-        "url": "https://github.com/halo951/git-release-version/issues"
+        "url": "https://github.com/halo951/release-version-by-git/issues"
     },
     "sideEffects": false,
     "files": [

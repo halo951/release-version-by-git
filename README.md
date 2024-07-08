@@ -9,7 +9,7 @@ generate public release version from git info. designed in accordance with seman
 in `vite.config.ts`
 
 ```typescript
-import { getVersion } from 'git-release-version'
+import { getVersion } from 'release-version-by-git'
 import { defineConfig, UserConfig } from 'vite'
 
 export default defineConfig(async (env): Promise<UserConfig> => {
