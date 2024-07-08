@@ -20,6 +20,10 @@ const getGitInfo = async (): Promise<{ branch: string; hash: string } | undefine
 const generateVersion = async (): Promise<string> => {
     const ver = semver.parse(pkg.version)!
     const { major, minor, patch } = ver
+    if (process.env.CI_COMMIT_BRANCH && process.env.CI_COMMIT_SHORT_SHA) {
+        const { CI_COMMIT_BRANCH, CI_COMMIT_SHORT_SHA } = process.env
+        return `${major}.${minor}.${patch}-${CI_COMMIT_BRANCH}.${CI_COMMIT_SHORT_SHA}`
+    }
     const info = await getGitInfo()
     if (info) {
         const { branch, hash } = info

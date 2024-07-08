@@ -10,7 +10,7 @@ const semver__default = /*#__PURE__*/_interopDefaultCompat(semver);
 const SimpleGit__default = /*#__PURE__*/_interopDefaultCompat(SimpleGit);
 const assert__default = /*#__PURE__*/_interopDefaultCompat(assert);
 
-const version = "1.0.0";
+const version = "1.0.1";
 
 const getGitInfo = async () => {
   try {
@@ -27,6 +27,10 @@ const getGitInfo = async () => {
 const generateVersion = async () => {
   const ver = semver__default.parse(version);
   const { major, minor, patch } = ver;
+  if (process.env.CI_COMMIT_BRANCH && process.env.CI_COMMIT_SHORT_SHA) {
+    const { CI_COMMIT_BRANCH, CI_COMMIT_SHORT_SHA } = process.env;
+    return `${major}.${minor}.${patch}-${CI_COMMIT_BRANCH}.${CI_COMMIT_SHORT_SHA}`;
+  }
   const info = await getGitInfo();
   if (info) {
     const { branch, hash } = info;

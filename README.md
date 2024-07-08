@@ -23,3 +23,4 @@ export default defineConfig(async (env): Promise<UserConfig> => {
 1. if has git info, then generate version by git info and `package.json`
     1. style: `${major}.${minor}.${patch}-${branch}.${hash}`, `major`、 `minor`、`patch` from `pkg.version`
 2. if don't has git info, then copy from `package.json` version.
+3. Support `gitlab CI`, if in `gitlab ci build`, prioritize the use of environmental variables
